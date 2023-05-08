@@ -1,0 +1,11 @@
+name: Read File Contents
+on: [push]
+
+jobs:
+  read_file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Read file contents
+      run: cat path/to/file_to_read.txt
