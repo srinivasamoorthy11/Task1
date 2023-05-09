@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "",
+  "parameters": {
+    "logicAppName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the Logic App."
+      }
+    },
+    "logicAppLocation": {
+      "type": "string",
+      "metadata": {
+        "description": "The location of the Logic App."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2016-06-01",
+      "name": "[parameters('logicAppName')]",
+      "location": "[parameters('logicAppLocation')]",
+      "properties": {
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "",
+          "parameters": {},
+          "triggers": {},
+          "actions": {}
+        },
+        "parameters": {}
+      }
+    }
+  ],
+  "outputs": {}
+}
