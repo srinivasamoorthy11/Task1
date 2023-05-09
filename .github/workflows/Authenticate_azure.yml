@@ -21,7 +21,7 @@ jobs:
       - name: Login to Azure Portal
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.CREDENTIALS }}
 
       - name: List Azure Subscriptions
         run: az account list --output table
