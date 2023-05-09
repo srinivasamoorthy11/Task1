@@ -1,0 +1,28 @@
+name: Deploy Logic App
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Logic App
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            az deployment group create \
+              --resource-group MyResourceGroup \
+              --template-file Apptemplate.json \
+              --parameters AppParameter.json
+          workingDirectory: ./LogicApp
