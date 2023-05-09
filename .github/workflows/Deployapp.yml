@@ -15,7 +15,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.CREDENTIAL}}
+          creds: ${{ secrets.CREDENTIALS}}
 
       - name: Deploy Logic App
         uses: azure/cli@v1
