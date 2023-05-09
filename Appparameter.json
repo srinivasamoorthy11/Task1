@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "",
+  "parameters": {
+    "logicAppName": {
+      "value": "MyLogicApp"
+    },
+    "logicAppLocation": {
+      "value": "eastus"
+    }
+  }
+}
