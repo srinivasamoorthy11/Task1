@@ -1,0 +1,14 @@
+name: Call a workflow2
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow:
+    uses: srinivasamoorthy11/Task1/.github/workflows/workflow2.yml@main
+    with:
+      config-path: .github/labeler.yml
+    secrets:
+      token: ${{ secrets.credential }}
