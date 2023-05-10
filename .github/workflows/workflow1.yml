@@ -1,7 +1,8 @@
 name: Call a workflow2
 
 on:
-  pull_request:
+  workflow_dispatch:
+  push:
     branches:
       - main
 
